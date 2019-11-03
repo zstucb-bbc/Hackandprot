@@ -1,0 +1,14 @@
+﻿@model HackingandSavingPage.Areas.SqlInjection.Models.SqlInjectionModel
+
+
+
+@using (Html.BeginForm("Save", "SqlInjection", FormMethod.Post,
+                                    new { enctype = "multipart/form-data" }))
+
+{ 
+    @Html.LabelFor(m => m.UserName)
+    @Html.TextBoxFor(m => m.UserName)
+
+    <button class="btn-primary" type="submit"></button>
+}
+
