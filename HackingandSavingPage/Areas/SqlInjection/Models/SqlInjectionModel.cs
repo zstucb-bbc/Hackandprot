@@ -14,6 +14,29 @@ namespace HackingandSavingPage.Areas.SqlInjection.Models
         public String UserName { get; 
             set; }
 
+        [DisplayName("Email")]
+        [Required]
+        public String Email
+        {
+            get;
+            set;
+        }
+
+        [DisplayName("Password")]
+        [Required]
+        public String Password
+        {
+            get;
+            set;
+        }
+
+        [DisplayName("Enter your Email again")]
+        [Required]
+        public String RepeatEmail
+        {
+            get;
+            set;
+        }
 
     }
 }

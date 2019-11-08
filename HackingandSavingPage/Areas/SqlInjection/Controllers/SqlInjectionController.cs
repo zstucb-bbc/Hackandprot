@@ -16,10 +16,9 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
         }
 
 
-        public ActionResult Save()
+        public ActionResult Save(SqlInjectionModel model)
         {
-            SqlInjectionModel model = new SqlInjectionModel();
-            return View(model);
+            return View("Index", model);
         }
     }
 }
