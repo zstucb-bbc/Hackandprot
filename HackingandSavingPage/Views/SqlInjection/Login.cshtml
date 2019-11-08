@@ -1,0 +1,40 @@
+﻿@model HackingandSavingPage.Areas.SqlInjection.Models.LoginModel
+
+
+<style>
+
+    .mybutton{
+
+        width: 70px;
+        height: 30px;
+    }
+
+</style>
+
+@using (Html.BeginForm("Login", "LoginModel", FormMethod.Post,
+                               new { enctype = "multipart/form-data" }))
+
+{
+    @Html.LabelFor(m => m.UserName)
+    @Html.TextBoxFor(m => m.UserName)
+    <br />
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+    <br />
+    <button class="mybutton" text="Submit" id ="submitButton" type="submit" disabled="disabled">Submit</button>
+}
+
+
+<script>
+
+    function Compare() {
+        console.log("Hello")
+        if (document.getElementById("Email").value == document.getElementById("RepeatEmail").value) {
+            document.getElementById("submitButton").removeAttribute("disabled");
+            
+        }else {
+                document.getElementById("submitButton").setAttribute("disabled", "disabled");
+            }
+    }
+
+</script>

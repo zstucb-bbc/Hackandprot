@@ -250,3 +250,4 @@ C:\Users\Benjamin\source\repos\Hackandprot\HackingandSavingPage\obj\Debug\netcor
 C:\Users\Benjamin\source\repos\Hackandprot\HackingandSavingPage\obj\Debug\netcoreapp3.0\HackingandSavingPage.csproj.CopyComplete
 C:\Users\Benjamin\source\repos\Hackandprot\HackingandSavingPage\obj\Debug\netcoreapp3.0\HackingandSavingPage.dll
 C:\Users\Benjamin\source\repos\Hackandprot\HackingandSavingPage\obj\Debug\netcoreapp3.0\HackingandSavingPage.pdb
+C:\Users\Benjamin\source\repos\Hackandprot\HackingandSavingPage\obj\Debug\netcoreapp3.0\Razor\Views\SqlInjection\Login.cshtml.g.cs
