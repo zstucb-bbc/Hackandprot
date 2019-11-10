@@ -28,15 +28,16 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
             
             if(model.UserName != null)
             {
-                logger.Info("User trying to login with, " + model.UserName + "as Username");
+                logger.Info("User trying to loging with, " + model.UserName + "as Username");
 
                 HackingandSavingPageUserDao dao = new HackingandSavingPageUserDao();
 
                 if (dao.existsUser(model)) {
                     HttpContext.Session.SetString("username", model.UserName);
-
+                    logger.Info("User succesfully logged in with, " + model.UserName + "as Username");
                     return View("UserEdit");
                 } else {
+                    logger.Info("User failed login with, " + model.UserName + "as Username");
                     return View("Login");
                 }
 
@@ -60,7 +61,7 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
         {
             if(HttpContext.Session.GetString("username") == null)
             {
-                logger.Info("User tried accessing site without being logged in");
+                logger.Warning("User tried accessing site without being logged in");
 
                 return View("Login");
             }
@@ -72,11 +73,6 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
                 return View("Login");
             }
             
-        }
-
-        public ActionResult UpdateUser(SqlInjectionModel model)
-        {
-            return View("UserEdit");
         }
 
         public ActionResult Save(SqlInjectionModel model)
