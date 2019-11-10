@@ -18,6 +18,7 @@ namespace HackingandSavingPage.Areas.SqlInjection.Models
 
         [DisplayName("Password")]
         [Required]
+
         public String Password
         {
             get;

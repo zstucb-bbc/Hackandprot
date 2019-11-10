@@ -1,0 +1,34 @@
+﻿@model HackingandSavingPage.Areas.SqlInjection.Models.SqlInjectionModel
+
+<link rel="stylesheet" type="text/css" href="~/css/site.css" media="screen" />
+
+
+
+
+
+@using (Html.BeginForm("Save", "SqlInjection", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+
+{
+    @Html.LabelFor(m => m.UserName)
+    @Html.TextBoxFor(m => m.UserName)
+    <br />
+    @Html.LabelFor(m => m.Password)
+    @Html.PasswordFor(m => m.Password)
+    <br />
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email, new { id = "Email", type = "Email", onInput = "Compare()" })
+    <br />
+    @Html.LabelFor(m => m.RepeatEmail)
+    @Html.TextBoxFor(m => m.RepeatEmail, new { id = "RepeatEmail", type = "Email", onInput = "Compare()" })
+    <br />
+    @Html.LabelFor(m=>m.Married)
+    @Html.CheckBoxFor(m => m.Married)
+    <br />
+    @Html.LabelFor(m=>m.Birthdate)
+    @Html.TextBoxFor(m=>m.Birthdate)
+
+
+    <button class="mybutton" text="Submit" id="submitButton" type="submit">Submit</button>
+}
+<script language="javascript" type="text/javascript" src="~/js/site.js"></script>

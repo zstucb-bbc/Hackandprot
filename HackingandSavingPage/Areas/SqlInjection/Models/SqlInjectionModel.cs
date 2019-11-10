@@ -24,6 +24,8 @@ namespace HackingandSavingPage.Areas.SqlInjection.Models
 
         [DisplayName("Password")]
         [Required]
+        [StringLength(10, ErrorMessage = "The password must be atleast 10 Characters")]
+
         public String Password
         {
             get;
@@ -37,6 +39,22 @@ namespace HackingandSavingPage.Areas.SqlInjection.Models
             get;
             set;
         }
+
+        [DisplayName("Married?")]
+        public bool Married
+        {
+            get;set;
+        }
+
+        [DisplayName("Your Birthday")]
+        public DateTime Birthdate
+        {
+            get; set;
+        }
+
+
+
+
 
     }
 }
