@@ -1,4 +1,9 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function Compare() {
+    console.log("Hello")
+    if (document.getElementById("Email").value == document.getElementById("RepeatEmail").value) {
+        document.getElementById("submitButton").removeAttribute("disabled");
 
-// Write your JavaScript code.
+    } else {
+        document.getElementById("submitButton").setAttribute("disabled", "disabled");
+    }
+}
