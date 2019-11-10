@@ -30,11 +30,16 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
             {
                 logger.Info("User trying to login with, " + model.UserName + "as Username");
 
-                //After succesfull login 
+                HackingandSavingPageUserDao dao = new HackingandSavingPageUserDao();
 
-                HttpContext.Session.SetString("username", model.UserName);
+                if (dao.existsUser(model)) {
+                    HttpContext.Session.SetString("username", model.UserName);
 
-                return View("UserEdit");
+                    return View("UserEdit");
+                } else {
+                    return View("Login");
+                }
+
             }
             else
             {
@@ -52,11 +57,18 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
                 return View("Login");
             }
 
-            // Da User usehole wo username het vode Session  und denn is model Abfülle und zwar ines Sqlinjectionmodel
-            // Sqlin model = new Sqletc
-            // model.username = db.username
-            //model.email = db.email
-            return View("UserEdit"/*, model*/);
+            HackingandSavingPageUserDao hackingandSavingPageUserDao = new HackingandSavingPageUserDao();
+            if (hackingandSavingPageUserDao.updateUser(HttpContext.Session.GetString("username"))) {
+                return View("UserEdit");
+            } else {
+                return View("Login");
+            }
+            
+        }
+
+        public ActionResult UpdateUser(SqlInjectionModel model)
+        {
+            return View("UserEdit");
         }
 
         public ActionResult Save(SqlInjectionModel model)
@@ -64,5 +76,7 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
             
             return View("Index", model);
         }
+
+        
     }
 }
