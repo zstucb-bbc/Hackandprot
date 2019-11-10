@@ -20,12 +20,14 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
 
         public ActionResult Login(LoginModel model)
         {
+            
             logger.log("User trying to login with, " + model.UserName + "as Username");
             return View("Login", model);
         }
 
         public ActionResult Save(SqlInjectionModel model)
         {
+            
             return View("Index", model);
         }
     }

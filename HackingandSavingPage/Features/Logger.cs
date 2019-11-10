@@ -15,12 +15,11 @@ namespace HackingandSavingPage.Features
         // Write the string to a file.append mode is enabled so that the log
         // lines get appended to  test.txt than wiping content and writing the log
 
-        System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\log.txt", true);
+        System.IO.StreamWriter file = new System.IO.StreamWriter("C:\\Users\\Benjamin\\source\\repos\\Hackandprot\\HackingandSavingPage\\Logs\\logs.txt", true);
         file.WriteLine(lines);
 
         file.Close();
 
     }
-
     }
 }
