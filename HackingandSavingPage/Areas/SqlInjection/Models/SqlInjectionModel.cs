@@ -24,8 +24,7 @@ namespace HackingandSavingPage.Areas.SqlInjection.Models
 
         [DisplayName("Password")]
         [Required]
-        [StringLength(10, ErrorMessage = "The password must be atleast 10 Characters")]
-
+        [MinLength(10, ErrorMessage = "The password must be atleast 10 Characters")]
         public String Password
         {
             get;

@@ -43,6 +43,14 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
             
         }
 
+
+
+        public ActionResult UpdateUser(SqlInjectionModel model)
+        {
+            
+            return null;
+        }
+
         public ActionResult UserEdit()
         {
             if(HttpContext.Session.GetString("username") == null)
@@ -61,8 +69,15 @@ namespace HackingandSavingPage.Areas.SqlInjectionController.Controllers
 
         public ActionResult Save(SqlInjectionModel model)
         {
-            
-            return View("Index", model);
+            if (TryValidateModel(model))
+            {
+                return View("Login");
+
+            }
+            else
+            {
+                return View("Index", model);
+            }
         }
     }
 }
